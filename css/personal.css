@@ -1,0 +1,137 @@
+/* start global rules */
+*{
+    box-sizing: border-box;
+}
+:root{
+    --main-color: #2196f3;
+    --main-color-alt: #1787e0;
+    --main-transition: 0.3s
+}
+.container{
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+html{
+    scroll-behavior: smooth;
+    transition: var(--main-transition);
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -ms-transition: var(--main-transition);
+    -o-transition: var(--main-transition);
+}
+a{
+    text-decoration: none;
+}
+body{
+    font-family: 'Cairo', sans-serif;
+}
+ul{
+    list-style: none;
+    margin: none;
+    padding: none;
+}
+/* small*/
+@media(min-width:768px){
+    .container{
+        width: 750px;
+    }
+}
+/* medium */
+@media(min-width:992px){
+    .container{
+        width: 970px;
+    }
+}
+/* large */
+@media(min-width:1200px){
+    .container{
+        width: 1170px;
+    }
+}
+
+/* end global rules */
+/* start header */
+header{
+    background-color:white;
+    box-shadow: 0 0 10px #ddd;
+    position: relative;
+}
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    flex-wrap: wrap;
+}
+
+header .container .part-1{
+    font-size: 28px;
+    color: var(--main-color);
+    font-weight: bold;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    height: 60px;
+    position: relative;
+}
+@media (max-width:767px) {
+    header .container .part-1{
+    width: 100%;
+    padding: 0;
+    height: 50px;
+    margin-bottom: -10px;
+    }
+}
+@media (max-width:767px) {
+    header .container .part-2{
+        margin: auto;
+    }
+}
+header .container .part-2 ul{
+    display: flex;
+    padding: 0;
+}
+header .container .part-2 li a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000000;
+    transition:var(--main-transition);
+    -webkit-transition:var(--main-transition);
+    -moz-transition:var(--main-transition);
+    -ms-transition:var(--main-transition);
+    -o-transition:var(--main-transition);
+    position: relative;
+    padding: 0 20px;
+    overflow: hidden;
+    height: 60px;
+}
+@media (max-width:767px) {
+    header .container .part-2 li a{
+        padding: 10px;
+    }
+}
+header .container .part-2 li a:hover{
+    color: var(--main-color);
+    background-color: #fafafa;
+}
+header .container .part-2 li a::before{
+    content: "";
+    position: absolute;
+    background-color: var(--main-color);
+    width: 100%;
+    height: 3px;
+    bottom: 0;
+    left: -100%;
+    transition: var(--main-transition);
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -ms-transition: var(--main-transition);
+    -o-transition: var(--main-transition);
+}
+header .container .part-2 li a:hover::before{
+    left: 0;
+}
+/* end header */
