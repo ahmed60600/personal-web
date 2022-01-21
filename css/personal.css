@@ -85,11 +85,11 @@ header .container .part-1{
         margin: auto;
     }
 }
-header .container .part-2 ul{
+header .container .part-2{
     display: flex;
     padding: 0;
 }
-header .container .part-2 li a{
+header .container .part-2 > li > a{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -109,11 +109,11 @@ header .container .part-2 li a{
         padding: 10px;
     }
 }
-header .container .part-2 li a:hover{
+header .container .part-2 > li > a:hover{
     color: var(--main-color);
     background-color: #fafafa;
 }
-header .container .part-2 li a::before{
+header .container .part-2 > li > a::before{
     content: "";
     position: absolute;
     background-color: var(--main-color);
@@ -127,7 +127,7 @@ header .container .part-2 li a::before{
     -ms-transition: var(--main-transition);
     -o-transition: var(--main-transition);
 }
-header .container .part-2 li a:hover::before{
+header .container .part-2 > li > a:hover::before{
     left: 0;
 }
 /* end header */
@@ -252,3 +252,37 @@ position: relative;
 }
 }
 /* end animation  */
+/* start mega-menu */
+header .mega-menu{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    left: 0;
+    top: calc(100% + 50px);
+    background-color: white;
+    border-bottom: 3px solid var(--main-color);
+    z-index: 50;
+    transition: top var(--main-transition), opacity var(--main-transition);
+    -webkit-transition: top var(--main-transition), opacity var(--main-transition);
+    -moz-transition: top var(--main-transition), opacity var(--main-transition);
+    -ms-transition: top var(--main-transition), opacity var(--main-transition);
+    -o-transition: top var(--main-transition), opacity var(--main-transition);
+    gap: 40px;
+}
+header .mega-menu .image img{
+    width:520px
+}
+header .mega-menu  .links li{
+    padding: 15px;
+    font-size: 18px;
+    border-bottom: 1px solid #e9e6e6;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+header .mega-menu  .links li:hover{
+    background-color:#fafafa
+}
+header .mega-menu .links li a{
+    color: var(--main-color-alt);
+}
+/* end mega-menu */
