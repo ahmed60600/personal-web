@@ -69,7 +69,7 @@ header .container .part-1{
     display: flex;
     justify-content:center;
     align-items: center;
-    height: 60px;
+    height: 70px;
     position: relative;
 }
 @media (max-width:767px) {
@@ -88,21 +88,28 @@ header .container .part-1{
 header .container .part-2{
     display: flex;
     padding: 0;
+    margin: 0;
+}
+header .container .part-2 > li:hover .mega-menu{
+    opacity: 1;
+    z-index: 50;
+    top: calc(100% + 1px);
 }
 header .container .part-2 > li > a{
     display: flex;
     justify-content: center;
     align-items: center;
     color: #000000;
-    transition:var(--main-transition);
-    -webkit-transition:var(--main-transition);
-    -moz-transition:var(--main-transition);
-    -ms-transition:var(--main-transition);
-    -o-transition:var(--main-transition);
+    transition: var(--main-transition);
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -ms-transition: var(--main-transition);
+    -o-transition: var(--main-transition);
     position: relative;
     padding: 0 20px;
     overflow: hidden;
-    height: 60px;
+    height: 70px;
+    font-size: 19px;
 }
 @media (max-width:767px) {
     header .container .part-2 li a{
@@ -261,23 +268,62 @@ header .mega-menu{
     top: calc(100% + 50px);
     background-color: white;
     border-bottom: 3px solid var(--main-color);
-    z-index: 50;
+    z-index: -1;
     transition: top var(--main-transition), opacity var(--main-transition);
     -webkit-transition: top var(--main-transition), opacity var(--main-transition);
     -moz-transition: top var(--main-transition), opacity var(--main-transition);
     -ms-transition: top var(--main-transition), opacity var(--main-transition);
     -o-transition: top var(--main-transition), opacity var(--main-transition);
     gap: 40px;
+    opacity: 0;
+}
+@media (max-width: 767px) {
+    header .mega-menu{
+        flex-direction: column;
+    }
+}
+@media (max-width:991px) {
+    header .mega-menu{
+        gap: 0;
+        justify-content:space-around
+    }
 }
 header .mega-menu .image img{
-    width:520px
+    max-width:100%
+}
+@media (max-width:991px) {
+    header .mega-menu .image{
+        display: none;
+    }
+}
+header .mega-menu  .links{
+    min-width:250px;
+    margin-top: 15px;
+}
+@media (max-width: 767px) {
+    header .mega-menu .links{
+        padding: 0;
+        margin: 0;
+    }
+}
+@media (max-width:991px) {
+    header .mega-menu  .links{
+       flex: 1
+    }
 }
 header .mega-menu  .links li{
     padding: 15px;
     font-size: 18px;
-    border-bottom: 1px solid #e9e6e6;
     font-weight: bold;
     margin-bottom: 10px;
+}
+@media (max-width: 767px) {
+    header .mega-menu ul:first-of-type li:last-child{
+        border-bottom: 1px solid #e9e6e6;
+    }
+}
+header .mega-menu  .links li:not(:last-child){
+    border-bottom: 1px solid #e9e6e6;
 }
 header .mega-menu  .links li:hover{
     background-color:#fafafa
